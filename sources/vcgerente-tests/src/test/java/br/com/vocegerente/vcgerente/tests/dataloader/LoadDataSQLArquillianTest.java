@@ -1,0 +1,34 @@
+package br.com.vocegerente.vcgerente.tests.dataloader;
+
+import javax.inject.Inject;
+
+import org.junit.Test;
+
+import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianTestBase;
+import br.com.vocegerente.vcgerente.tests.dataloader.LoadData;
+
+/**
+ * Testa o uso da anotação {@link LoadData} em classes de teste para carregamento de dados com Beans.
+ * @author augusto
+ *
+ */
+@LoadData(sql="dataloader/uf_aa.sql")
+public class LoadDataSQLArquillianTest extends ArquillianTestBase implements LoadDataSQLTestDef {
+
+	@Inject
+	private LoadDataSQLTestImpl tester;
+	
+	@Override
+	@Test
+	public void loadSQLDataOnTypeTest() {
+		tester.loadSQLDataOnTypeTest();
+	}
+	
+	@Override
+	@LoadData(sql="dataloader/uf_bb.sql")
+	@Test
+	public void loadSQLDataOnMethodTest() {
+		tester.loadSQLDataOnMethodTest();
+	}
+	
+}

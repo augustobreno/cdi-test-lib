@@ -1,0 +1,4 @@
+/sources/vcgerente-tests/*.classpath
+/sources/vcgerente-tests/.settings
+/sources/vcgerente-tests/target
+/sources/vcgerente-tests/*.project
