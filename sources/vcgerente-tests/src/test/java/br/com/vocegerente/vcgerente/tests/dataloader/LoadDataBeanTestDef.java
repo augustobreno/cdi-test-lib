@@ -1,6 +1,5 @@
 package br.com.vocegerente.vcgerente.tests.dataloader;
 
-import br.com.vocegerente.vcgerente.tests.dataloader.DataLoader;
 
 
 public interface LoadDataBeanTestDef {

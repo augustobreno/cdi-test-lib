@@ -6,8 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import br.com.vocegerente.vcgerente.tests.cdi.CDI;
-import br.com.vocegerente.vcgerente.tests.cdi.CdiJUnitRunner;
 import br.com.vocegerente.vcgerente.tests.util.EmptyBean;
 import br.com.vocegerente.vcgerente.tests.util.EmptyBeanA;
 import br.com.vocegerente.vcgerente.tests.util.EmptyBeanB;

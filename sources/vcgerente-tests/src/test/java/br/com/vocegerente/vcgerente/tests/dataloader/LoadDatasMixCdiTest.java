@@ -5,8 +5,6 @@ import javax.inject.Inject;
 import org.junit.Test;
 
 import br.com.vocegerente.vcgerente.tests.LocalTransactionTestBase;
-import br.com.vocegerente.vcgerente.tests.dataloader.LoadData;
-import br.com.vocegerente.vcgerente.tests.dataloader.LoadDatas;
 
 /**
  * Testa o uso da anotação {@link LoadDatas}, misturando as opções de script e Bean.

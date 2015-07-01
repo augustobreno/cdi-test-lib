@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import org.junit.Test;
 
 import br.com.vocegerente.vcgerente.tests.LocalTransactionTestBase;
-import br.com.vocegerente.vcgerente.tests.dataloader.HibernateDataLoader;
 
 /**
  * Teste para a classe {@link HibernateDataLoader}

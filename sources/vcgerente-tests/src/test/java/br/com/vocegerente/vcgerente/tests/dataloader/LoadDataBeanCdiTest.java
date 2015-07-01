@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import org.junit.Test;
 
 import br.com.vocegerente.vcgerente.tests.LocalTransactionTestBase;
-import br.com.vocegerente.vcgerente.tests.dataloader.LoadData;
 
 /**
  * Testa o uso da anotação {@link LoadData} em classes de teste para carregamento de scripts SQL.

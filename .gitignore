@@ -2,3 +2,5 @@
 /sources/vcgerente-tests/.settings
 /sources/vcgerente-tests/target
 /sources/vcgerente-tests/*.project
+/sources/vcgerente-tests/src/main/resources/rebel.xml
+/sources/vcgerente-tests/*.log

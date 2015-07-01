@@ -19,9 +19,6 @@
 
 	<dependencies>
 
-		<!-- Declare the APIs we depend on and need for compilation. All of them 
-			are provided by JBoss AS 7 -->
-
 		<!-- Import the EJB API, we use provided scope as the API is included in 
 			JBoss AS 7 -->
 		<dependency>
@@ -135,19 +132,6 @@
 			<groupId>org.jboss</groupId>
 			<artifactId>jandex</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.jboss.arquillian.graphene</groupId>
-			<artifactId>graphene-webdriver-spi</artifactId>
-			<version>2.1.0.Alpha1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-api</artifactId>
-			<version>2.44.0</version>
-		</dependency>
-
 
 	</dependencies>
 

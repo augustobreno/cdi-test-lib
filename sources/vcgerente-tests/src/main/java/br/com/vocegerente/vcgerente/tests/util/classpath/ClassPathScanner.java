@@ -12,7 +12,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 
@@ -23,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class ClassPathScanner {
 
-	private static final Logger logger = LogManager.getLogManager().getLogger(ClassPathScanner.class.getName());
+	private static final Logger logger = Logger.getLogger(ClassPathScanner.class.getName());
 	
 	/** cache para as buscas do scanner */
 	private static Map<String, Object> scannerCache = new HashMap<String, Object>();

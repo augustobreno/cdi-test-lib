@@ -1,6 +1,5 @@
 package br.com.vocegerente.vcgerente.tests.cdi;
 
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import javax.enterprise.inject.Produces;
@@ -27,9 +26,9 @@ public class LoggerProducer {
 		Class<?> injectionClass = getInjectionClass(caller);
 		Logger logger = null;
 		if (injectionClass == null) {
-			logger = LogManager.getLogManager().getLogger("NO_CLASS");
+			logger = Logger.getLogger("NO_CLASS");
 		} else {
-			logger = LogManager.getLogManager().getLogger(injectionClass.getName());
+			logger = Logger.getLogger(injectionClass.getName());
 		}
    		return logger;
     }

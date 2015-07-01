@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import org.junit.Test;
 
 import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianTestBase;
-import br.com.vocegerente.vcgerente.tests.dataloader.LoadData;
 
 /**
  * Testa o uso da anotação {@link LoadData} em classes de teste para carregamento de dados com Beans.

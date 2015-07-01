@@ -16,8 +16,6 @@ import org.junit.Test;
 import br.com.vocegerente.vcgerente.tests.DeployableTestBase;
 import br.com.vocegerente.vcgerente.tests.TestBase;
 import br.com.vocegerente.vcgerente.tests.alternatives.AlternativeContainerEntityManagerProducer;
-import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianCommonRunner;
-import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianDataLoaderExtension;
 import br.com.vocegerente.vcgerente.tests.cdi.CDI;
 import br.com.vocegerente.vcgerente.tests.util.EmptyBean;
 import br.com.vocegerente.vcgerente.tests.util.EmptyBeanA;

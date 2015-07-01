@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import org.junit.Test;
 
 import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianTestBase;
-import br.com.vocegerente.vcgerente.tests.dataloader.SqlDataLoader;
 
 /**
  * Testes da classe {@link SqlDataLoader}

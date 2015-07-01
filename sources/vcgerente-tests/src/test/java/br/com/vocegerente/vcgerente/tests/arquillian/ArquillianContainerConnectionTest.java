@@ -6,8 +6,6 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 
-import br.com.vocegerente.vcgerente.tests.arquillian.ArquillianCommonRunner;
-
 /**
  * Verifica se o arquillian está devidamente configurado para se conectar ao servidor de 
  * aplicação.

@@ -1,6 +1,5 @@
 package br.com.vocegerente.vcgerente.tests.dataloader;
 
-import br.com.vocegerente.vcgerente.tests.dataloader.HibernateDataLoader;
 import br.com.vocegerente.vcgerente.tests.domain.UF;
 
 /**

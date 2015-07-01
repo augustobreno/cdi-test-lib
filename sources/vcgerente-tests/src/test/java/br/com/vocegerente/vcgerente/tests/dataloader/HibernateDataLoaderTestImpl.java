@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import org.junit.Assert;
 
-import br.com.vocegerente.vcgerente.tests.dataloader.HibernateDataLoader;
 import br.com.vocegerente.vcgerente.tests.util.QuerierUtil;
 
 /**
