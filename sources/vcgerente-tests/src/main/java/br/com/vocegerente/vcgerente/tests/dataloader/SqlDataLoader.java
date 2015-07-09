@@ -103,7 +103,7 @@ public class SqlDataLoader extends HibernateDataLoader {
 				scriptInput = Thread.currentThread().getContextClassLoader().getResourceAsStream(scriptPath);
 				scanner = new Scanner(scriptInput, "UTF8");
 				
-				List<String> comandos = new ArrayList<>();
+				List<String> comandos = new ArrayList<String>();
 				while (scanner.hasNext()) {
 					String linha = scanner.nextLine();
 					comandos.add(linha);
