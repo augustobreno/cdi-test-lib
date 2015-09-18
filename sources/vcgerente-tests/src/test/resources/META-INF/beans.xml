@@ -5,7 +5,7 @@
        version="1.1" bean-discovery-mode="all" >
        
  <interceptors>
-  <class>br.com.vocegerente.vcgerente.tests.dataloader.LoadDatasInterceptor</class>
-  <class>br.com.vocegerente.vcgerente.tests.dataloader.LoadDataInterceptor</class>
+  <class>br.com.vcg.tests.dataloader.LoadDatasInterceptor</class>
+  <class>br.com.vcg.tests.dataloader.LoadDataInterceptor</class>
  </interceptors>
 </beans>
