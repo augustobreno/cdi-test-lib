@@ -174,5 +174,9 @@ public class JPAStandalone {
 	public void setQuerier(QuerierUtil querier) {
 		this.querier = querier;
 	}
+
+    public EntityManagerFactory getEmf() {
+        return emf;
+    }
 	
 }
