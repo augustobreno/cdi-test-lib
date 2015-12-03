@@ -1,6 +1,7 @@
 package br.com.vcg.tests.cdi;
 
 import org.jboss.weld.context.RequestContext;
+import org.jboss.weld.context.SessionContext;
 import org.jboss.weld.context.unbound.UnboundLiteral;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
@@ -33,13 +34,18 @@ public class CdiJUnitRunner extends BlockJUnit4ClassRunner {
      * para a disponibilização de escopos nativos do ambiente web (request, session, etc).
      */
     protected void startScopes() {
+//        startSessionScope();
         startRequestScope();
-        
     }
 
-    private void startRequestScope() {
-        RequestContext requestContext= container.instance().select(RequestContext.class, UnboundLiteral.INSTANCE).get();
-        requestContext.activate();
+    protected void startSessionScope() {
+        SessionContext context= container.instance().select(SessionContext.class, UnboundLiteral.INSTANCE).get();
+        context.activate();
+    }
+
+    protected void startRequestScope() {
+        RequestContext context= container.instance().select(RequestContext.class, UnboundLiteral.INSTANCE).get();
+        context.activate();
     }
 
     @Override
