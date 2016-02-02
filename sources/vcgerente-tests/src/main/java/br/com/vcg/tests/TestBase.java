@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
@@ -48,7 +47,7 @@ public abstract class TestBase {
      * verificada.
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public void assertContentEqual(List expected, List actual, Comparator comparator) {
+    public void assertContentEqual(Collection expected, Collection actual, Comparator comparator) {
         // verifica se há algum elemento da lista atual que não se encontra na
         // lista esperada
         TreeSet<Object> expectedSet = new TreeSet<>(comparator);
@@ -72,16 +71,21 @@ public abstract class TestBase {
         }
     }
 
-    public <T> void assertSize(List<T> expected, List<T> actual) {
+    public <T> void assertSize(Collection<T> expected, Collection<T> actual) {
         assertTrue("A lista atual não tem o mesmo número de elementos da lista esperada. Atual = " + actual.size()
                 + " esperada = " + expected.size(), expected.size() == actual.size());
+    }
+    
+    public <T> void assertSize(int expected, Collection<T> list) {
+        assertTrue("A lista atual não tem o tamanho esperado. Atual = " + list.size()
+                + " esperada = " + expected, expected == list.size());
     }
 
     /**
      * Verifica se ambas as listas possuem os mesmos objetos. A ordem não é
      * verificada.
      */
-    public <T> void assertContentEqual(List<T> expected, List<T> actual) {
+    public <T> void assertContentEqual(Collection<T> expected, Collection<T> actual) {
 
         assertTrue(
                 "A primeira lista (expected) não contem todos os objetos da segunda lista (actual)",
