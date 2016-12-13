@@ -5,20 +5,23 @@ import java.util.logging.Logger;
 
 import javax.enterprise.util.AnnotationLiteral;
 
+import org.jglue.cdiunit.AdditionalClasses;
+import org.jglue.cdiunit.deltaspike.SupportDeltaspikeCore;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.vcg.tests.TestBase;
+import br.com.vcg.tests.CdiTestBase;
 import br.com.vcg.tests.cdi.CDI;
 import br.com.vcg.tests.cdi.ForTest;
-import br.com.vcg.tests.jpa.JPAStandalone;
-import br.com.vcg.tests.jpa.JpaStandaloneRepository;
+import br.com.vcg.tests.cdi.LoggerProducer;
 
 /**
  * Testa recursos da classe {@link JpaStandaloneRepository}
  * @author augusto
  */
-public class JpaStandaloneRepositoryTest extends TestBase {
+@SupportDeltaspikeCore
+@AdditionalClasses({LoggerProducer.class})
+public class JpaStandaloneRepositoryTest extends CdiTestBase {
 
 	/**
 	 * Testa execução do método {@link JpaStandaloneRepository#scanForPersistenceUnits()}

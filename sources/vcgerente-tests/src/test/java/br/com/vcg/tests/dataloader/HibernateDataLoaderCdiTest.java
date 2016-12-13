@@ -4,15 +4,14 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 
-import br.com.vcg.tests.LocalTransactionTestBase;
-import br.com.vcg.tests.dataloader.HibernateDataLoader;
+import br.com.vcg.tests.AppLocalTransactionTestBase;
 
 /**
  * Teste para a classe {@link HibernateDataLoader}
  * @author augusto
  *
  */
-public class HibernateDataLoaderCdiTest extends LocalTransactionTestBase implements HibernateDataLoaderTestDef {
+public class HibernateDataLoaderCdiTest extends AppLocalTransactionTestBase implements HibernateDataLoaderTestDef {
 
 	@Inject
 	private HibernateDataLoaderTestImpl tester;

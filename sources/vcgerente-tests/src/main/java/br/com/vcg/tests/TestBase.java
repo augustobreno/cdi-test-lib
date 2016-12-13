@@ -11,20 +11,14 @@ import java.util.TreeSet;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
-import org.junit.runner.RunWith;
-
-import br.com.vcg.tests.cdi.CdiJUnitRunner;
 
 /**
  * Classe base com comportamento comum para testes unitários simples (pojo).
- * Gerencia o ciclo de vida do JUnit, integrando a classe a um Container CDI (o
- * que significa que Injeção de Dependências e todos os seus recursos são
- * suportados desde a classe de testes).
+ * Gerencia o ciclo de vida do JUnit.
  * 
  * @author Augusto
  * 
  */
-@RunWith(CdiJUnitRunner.class)
 @Ignore
 public abstract class TestBase {
 

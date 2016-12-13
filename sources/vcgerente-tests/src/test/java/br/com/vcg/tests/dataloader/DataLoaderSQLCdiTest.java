@@ -4,15 +4,14 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 
-import br.com.vcg.tests.LocalTransactionTestBase;
-import br.com.vcg.tests.dataloader.SqlDataLoader;
+import br.com.vcg.tests.AppLocalTransactionTestBase;
 
 
 /**
  * Testes da classe {@link SqlDataLoader}
  * @author augusto
  */
-public class DataLoaderSQLCdiTest extends LocalTransactionTestBase implements DataLoaderSQLTestDef {
+public class DataLoaderSQLCdiTest extends AppLocalTransactionTestBase implements DataLoaderSQLTestDef {
 
 	@Inject
 	private DataLoaderSQLTestImpl tester;

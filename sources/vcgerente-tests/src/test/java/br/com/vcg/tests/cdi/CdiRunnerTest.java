@@ -2,15 +2,15 @@ package br.com.vcg.tests.cdi;
 
 import javax.inject.Inject;
 
+import org.jglue.cdiunit.CdiRunner;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import br.com.vcg.tests.cdi.CdiJUnitRunner;
 import br.com.vcg.tests.util.EmptyBeanA;
 
-@RunWith(CdiJUnitRunner.class)
-public class CdiJUnitRunnerTest {
+@RunWith(CdiRunner.class)
+public class CdiRunnerTest {
 
 	@Inject
 	private EmptyBeanA emptyBeanA;

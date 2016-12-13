@@ -2,10 +2,10 @@ package br.com.vcg.tests.dataloader;
 
 import javax.inject.Inject;
 
+import org.jglue.cdiunit.AdditionalPackages;
 import org.junit.Test;
 
-import br.com.vcg.tests.LocalTransactionTestBase;
-import br.com.vcg.tests.dataloader.LoadData;
+import br.com.vcg.tests.AppLocalTransactionTestBase;
 
 /**
  * Testa o uso da anotação {@link LoadData} em classes de teste para carregamento de scripts SQL.
@@ -13,7 +13,8 @@ import br.com.vcg.tests.dataloader.LoadData;
  *
  */
 @LoadData(dataLoader=UF_aa_DataLoader.class)
-public class LoadDataBeanCdiTest extends LocalTransactionTestBase implements LoadDataBeanTestDef {
+@AdditionalPackages({LoadDataBeanCdiTest.class})
+public class LoadDataBeanCdiTest extends AppLocalTransactionTestBase implements LoadDataBeanTestDef {
 
 	@Inject
 	private LoadDataBeanTestImpl tester;

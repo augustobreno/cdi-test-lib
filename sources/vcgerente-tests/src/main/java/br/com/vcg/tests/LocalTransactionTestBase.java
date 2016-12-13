@@ -24,7 +24,7 @@ import br.com.vcg.tests.util.QuerierUtil;
  * 
  */
 @Ignore
-public class LocalTransactionTestBase extends TestBase {
+public abstract class LocalTransactionTestBase extends TestBase {
 
 	/**
 	 * Para a acesso a todas as configurações de {@link JPAStandalone} configuradas.

@@ -2,11 +2,10 @@ package br.com.vcg.tests.dataloader;
 
 import javax.inject.Inject;
 
+import org.jglue.cdiunit.AdditionalPackages;
 import org.junit.Test;
 
-import br.com.vcg.tests.LocalTransactionTestBase;
-import br.com.vcg.tests.dataloader.LoadData;
-import br.com.vcg.tests.dataloader.LoadDatas;
+import br.com.vcg.tests.AppLocalTransactionTestBase;
 
 /**
  * Testa o uso da anotação {@link LoadDatas}, misturando as opções de script e Bean.
@@ -17,7 +16,8 @@ import br.com.vcg.tests.dataloader.LoadDatas;
 	@LoadData(sql="dataloader/uf_aa.sql"),
 	@LoadData(dataLoader=UF_bb_DataLoader.class, precedence=3)
 })	
-public class LoadDatasMixCdiTest extends LocalTransactionTestBase implements LoadDatasMixTestDef {
+@AdditionalPackages({LoadDatasMixCdiTest.class})
+public class LoadDatasMixCdiTest extends AppLocalTransactionTestBase implements LoadDatasMixTestDef {
 
 	@Inject
 	private LoadDatasMixTestImpl tester;

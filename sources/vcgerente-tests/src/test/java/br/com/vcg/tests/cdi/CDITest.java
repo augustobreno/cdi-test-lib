@@ -2,18 +2,22 @@ package br.com.vcg.tests.cdi;
 
 import javax.enterprise.util.AnnotationLiteral;
 
+import org.jglue.cdiunit.AdditionalClasses;
+import org.jglue.cdiunit.CdiRunner;
+import org.jglue.cdiunit.deltaspike.SupportDeltaspikeCore;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import br.com.vcg.tests.cdi.CDI;
-import br.com.vcg.tests.cdi.CdiJUnitRunner;
 import br.com.vcg.tests.util.EmptyBean;
 import br.com.vcg.tests.util.EmptyBeanA;
 import br.com.vcg.tests.util.EmptyBeanB;
 import br.com.vcg.tests.util.QualifierB;
 
-@RunWith(CdiJUnitRunner.class)
+@RunWith(CdiRunner.class)
+
+@SupportDeltaspikeCore
+@AdditionalClasses({EmptyBeanA.class})
 public class CDITest {
 
 	/**
