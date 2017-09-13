@@ -3,12 +3,14 @@ package br.com.vcg.tests;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 
@@ -81,13 +83,27 @@ public abstract class TestBase {
      */
     public <T> void assertContentEqual(Collection<T> expected, Collection<T> actual) {
 
-        assertTrue(
-                "A primeira lista (expected) não contem todos os objetos da segunda lista (actual)",
-                expected.containsAll(actual));
-
-        assertTrue(
-                "A segunda lista (actual) não contem todos os objetos da primeira lista (expected)",
-                actual.containsAll(expected));
+        boolean expectedContainsAllActual = expected.containsAll(actual);
+        if (!expectedContainsAllActual) {
+            List<T> diff = new ArrayList<>();
+            actual.forEach(item -> {
+                if (!expected.contains(item)) {
+                    diff.add(item);
+                }
+            });
+            Assert.fail("Os seguintes estão segunda lista e não estão na primeira: " + diff);
+        }
+        
+        boolean actualContainsAllExpected = actual.containsAll(expected);
+        if (!actualContainsAllExpected) {
+            List<T> diff = new ArrayList<>();
+            expected.forEach(item -> {
+                if (!actual.contains(item)) {
+                    diff.add(item);
+                }
+            });
+            Assert.fail("Os seguintes estão primeira lista e não estão na segunda: " + diff);            
+        }
     }
 
     /**
