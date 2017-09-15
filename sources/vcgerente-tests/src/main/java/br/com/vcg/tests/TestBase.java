@@ -2,6 +2,7 @@ package br.com.vcg.tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Collection;
 import java.util.Comparator;
@@ -88,6 +89,19 @@ public abstract class TestBase {
         assertTrue(
                 "A segunda lista (actual) não contem todos os objetos da primeira lista (expected)",
                 actual.containsAll(expected));
+    }
+    
+    /**
+     * Verifica se ambas as listas possuem os mesmos objetos na mesma ordem.
+     */
+    public <T> void assertContentAndOrderEquals(List<T> expected, List<T> actual) {
+        
+        assertSize(expected, actual);
+        
+        for(int i = 0; i < actual.size(); i++){
+            assertEquals("Foi identificado um elemento em ordem diferente",expected.get(i), actual.get(i)); 
+        }
+
     }
 
     /**
