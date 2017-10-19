@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.vcg.tests.cdi.CDI;
 
 /**
- * COncentra a lógica de execução dos interceptadores de {@link LoadData} e {@link LoadDatas}
+ * Concentra a lógica de execução dos interceptadores de {@link LoadData} e {@link LoadDatas}
  * @author Augusto
  *
  */

@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import org.hibernate.Session;
 
 import br.com.vcg.tests.cdi.ForTest;
+import br.com.vcg.tests.util.QuerierUtil;
 
 /**
  * Data loader que utiliza o EntityManager para carregamento dos dados.
@@ -20,6 +21,8 @@ public abstract class HibernateDataLoader implements DataLoader {
 	
 	/** Para acesso à conexão com a base de dados. */
 	private EntityManager entityManager;
+
+    private QuerierUtil querier;
 	
 	protected Session getSession() {
 		return  entityManager != null ? (Session) entityManager.getDelegate() : null;
@@ -45,4 +48,10 @@ public abstract class HibernateDataLoader implements DataLoader {
 		this.entityManager = entityManager;
 	}
 	
+    public QuerierUtil getQuerier() {
+        if (this.querier == null) {
+            this.querier = new QuerierUtil(getEntityManager());
+        }
+        return querier;
+    }	
 }
