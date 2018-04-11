@@ -151,7 +151,7 @@ public class QuerierUtil {
 
 		if (parametros != null && parametros.length > 0) {
 			for (int i = 0; i < parametros.length; i++) {
-				query.setParameter(i + 1, parametros[i]);
+				query.setParameter(i, parametros[i]);
 			}
 		}
 		return query;
