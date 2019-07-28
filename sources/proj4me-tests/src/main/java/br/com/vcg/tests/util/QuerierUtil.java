@@ -65,8 +65,8 @@ public class QuerierUtil {
 	 * @param type TIpo da entidade a ser consultada.
 	 * @return Número total de registros encontrados na base de dados.
 	 */
-	public <T> Long count(Class<T> type) {
-		return (Long) getEm().createQuery("select count(e) from " + type.getSimpleName() + " e ").getSingleResult();
+	public <T> long count(Class<T> type) {
+		return (long) getEm().createQuery("select count(e) from " + type.getSimpleName() + " e ").getSingleResult();
 	}
 
 	/**

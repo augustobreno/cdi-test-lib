@@ -23,14 +23,14 @@ public class DataLoaderSQLTestImpl implements DataLoaderSQLTestDef {
 	@Override
 	public void loadScriptTest() throws Exception {
 		// garante que não há nenhuma uf com sigla "aa"
-		long count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		long count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(0, count);
 		
 		loaderSQL.setScriptPath("dataloader/uf_aa.sql");
 		loaderSQL.load();
 		
 		// buscando o registro para confirmação
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);
 	}
 

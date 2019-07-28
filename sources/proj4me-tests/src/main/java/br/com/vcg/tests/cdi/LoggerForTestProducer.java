@@ -14,7 +14,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
  * @author augusto
  *
  */
-public class LoggerProducer {
+public class LoggerForTestProducer {
 
     private Class<?> getInjectionClass(InjectionPoint ip) {
         return ip != null ? ip.getMember().getDeclaringClass() : null;

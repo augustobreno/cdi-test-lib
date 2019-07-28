@@ -1,8 +1,8 @@
 package br.com.vcg.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,14 +29,14 @@ public abstract class TestBase {
      * Executado antes de cada método de teste.
      */
     @Before
-    public void beforeEachTest() {
+    public void beforeEachTest() throws Exception {
     };
 
     /**
      * Executado após de cada método de teste.
      */
     @After
-    public void afterEachTest() {
+    public void afterEachTest() throws Exception  {
     };
 
     /**
@@ -150,6 +150,13 @@ public abstract class TestBase {
     protected void assertEmpty(Collection<?> collection) {
         assertTrue(collection != null && collection.isEmpty());
     }
+    
+    /**
+     * Verifica se a string é null ou empty.
+     */
+    protected void assertNullOrEmpty(String string) {
+        assertTrue(string == null || string.trim().isEmpty());
+    }    
 
     /**
      * Verifica se a coleção é null ou vazia.

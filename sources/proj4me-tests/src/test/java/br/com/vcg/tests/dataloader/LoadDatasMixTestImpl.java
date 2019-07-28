@@ -24,10 +24,10 @@ public class LoadDatasMixTestImpl implements LoadDatasMixTestDef {
 		Assert.assertEquals(2, count);
 		
 		// buscando o registro para confirmação
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);
 		
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "bb");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "bb");
 		Assert.assertEquals(1, count);		
 	}
 
@@ -38,16 +38,16 @@ public class LoadDatasMixTestImpl implements LoadDatasMixTestDef {
 		Assert.assertEquals(4, count);
 		
 		// buscando o registro para confirmação
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);
 		
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "bb");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "bb");
 		Assert.assertEquals(1, count);
 		
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "cc");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "cc");
 		Assert.assertEquals(1, count);
 		
-		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "dd");
+		count = querier.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "dd");
 		Assert.assertEquals(1, count);
 	}
 

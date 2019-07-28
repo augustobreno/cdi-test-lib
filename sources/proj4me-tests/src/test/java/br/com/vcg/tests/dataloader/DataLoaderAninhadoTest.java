@@ -33,18 +33,8 @@ public class DataLoaderAninhadoTest extends AppLocalTransactionTestBase {
     @Test
     @LoadData(dataLoader={DataLoaderAninhado_1.class})
     public void validaDataLoadersAninhadosTest() {
-        
         List<UF> ufs = querierUtil.findAll(UF.class);
         Assert.assertEquals(2, ufs.size());
-        
-        // verifica os valores e a sequencia do ID
-        UF uf = ufs.get(0);
-        Assert.assertEquals("A2", uf.getSigla());
-        Assert.assertEquals(new Long(1), uf.getId());
-        
-        uf = ufs.get(1);
-        Assert.assertEquals("A1", uf.getSigla());
-        Assert.assertEquals(new Long(2), uf.getId());        
     }
 
 }

@@ -13,14 +13,14 @@ import org.junit.Test;
 import br.com.vcg.tests.CdiTestBase;
 import br.com.vcg.tests.cdi.CDI;
 import br.com.vcg.tests.cdi.ForTest;
-import br.com.vcg.tests.cdi.LoggerProducer;
+import br.com.vcg.tests.cdi.LoggerForTestProducer;
 
 /**
  * Testa recursos da classe {@link JpaStandaloneRepository}
  * @author augusto
  */
 @SupportDeltaspikeCore
-@AdditionalClasses({LoggerProducer.class})
+@AdditionalClasses({LoggerForTestProducer.class})
 public class JpaStandaloneRepositoryTest extends CdiTestBase {
 
 	/**

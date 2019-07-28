@@ -24,7 +24,7 @@ public class LoadDataSQLTestImpl implements LoadDataSQLTestDef {
 		Assert.assertEquals(1, count);
 		
 		// buscando o registro para confirmação
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);		
 	}
 	
@@ -38,10 +38,10 @@ public class LoadDataSQLTestImpl implements LoadDataSQLTestDef {
 		Assert.assertEquals(2, count);
 		
 		// buscando o registro para confirmação
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);
 		
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "bb");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "bb");
 		Assert.assertEquals(1, count);		
 	}
 	

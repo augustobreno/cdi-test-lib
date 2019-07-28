@@ -35,9 +35,10 @@ public abstract class LocalTransactionTestBase extends TestBase {
 	/**
 	 * Executado antes de cada método de teste. Realiza o controle do início da
 	 * transação.
+	 * @throws Exception 
 	 */
 	@Before
-	public void beforeEachTest() {
+	public void beforeEachTest() throws Exception {
 		for (JPAStandalone jpa : jpaRepository.getAll()) {
 			jpa.startSession();
 			jpa.startTransaction();
@@ -49,7 +50,7 @@ public abstract class LocalTransactionTestBase extends TestBase {
 	 * transação.
 	 */
 	@After
-	public void afterEachTest() {
+	public void afterEachTest() throws Exception {
 		for (JPAStandalone jpa : jpaRepository.getAll()) {
 			jpa.rollbackTransaction();
 		}

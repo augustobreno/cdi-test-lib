@@ -28,7 +28,7 @@ public class LoadDataBeanTestImpl implements LoadDataBeanTestDef {
 		Assert.assertEquals(1, count);
 		
 		// buscando o registro para confirmação
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);		
 	}
 	
@@ -42,10 +42,10 @@ public class LoadDataBeanTestImpl implements LoadDataBeanTestDef {
 		Assert.assertEquals(2, count);
 		
 		// buscando o registro para confirmação
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "aa");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "aa");
 		Assert.assertEquals(1, count);
 		
-		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?", "bb");
+		count = querierUtil.executeCountQuery("select count(uf) from UF uf where uf.sigla=?0", "bb");
 		Assert.assertEquals(1, count);		
 	}
 	
@@ -61,8 +61,8 @@ public class LoadDataBeanTestImpl implements LoadDataBeanTestDef {
 		 * A verificação será realizada pela comparação dos ID's, visto que são provenientes de sequences.
 		 */
 		// buscando o registro para confirmação
-		UF uf_aa = (UF) querierUtil.executeQuery("select uf from UF uf where uf.sigla=?", "aa").get(0);
-		UF uf_bb = (UF) querierUtil.executeQuery("select uf from UF uf where uf.sigla=?", "bb").get(0);
+		UF uf_aa = (UF) querierUtil.executeQuery("select uf from UF uf where uf.sigla=?0", "aa").get(0);
+		UF uf_bb = (UF) querierUtil.executeQuery("select uf from UF uf where uf.sigla=?0", "bb").get(0);
 		Assert.assertTrue(uf_aa.getId() > uf_bb.getId());		
 		
 	}
