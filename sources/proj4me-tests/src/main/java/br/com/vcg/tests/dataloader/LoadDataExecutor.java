@@ -62,7 +62,7 @@ public class LoadDataExecutor {
 	 * Cria um ou mais {@link DataLoader} a partir de informações extraídas 
 	 * de anotação do tipo {@link LoadData} presente. 
 	 */
-	private void extractLoadData(AnnotatedElement element, List<DataLoaderPrecedence> loaders) {
+	private void extractLoadData(AnnotatedElement element, Collection<DataLoaderPrecedence> loaders) {
 		LoadData loadData = element.getAnnotation(LoadData.class);
 		if(loadData != null) {
 			addDataLoader(loaders, loadData);
@@ -73,7 +73,7 @@ public class LoadDataExecutor {
 	 * Cria um ou mais {@link DataLoader} a partir de informações extraídas 
 	 * de anotação do tipo {@link LoadDatas} presente. 
 	 */
-	private void extractLoadDatas(AnnotatedElement element, List<DataLoaderPrecedence> loaders) {
+	private void extractLoadDatas(AnnotatedElement element, Collection<DataLoaderPrecedence> loaders) {
 		LoadDatas loadDatas = element.getAnnotation(LoadDatas.class);
 		if (loadDatas != null) {
 			for (LoadData loadData : loadDatas.value()) {
@@ -100,10 +100,13 @@ public class LoadDataExecutor {
 		// carregando beans
 		Class<? extends DataLoader>[] beans = loadData.dataLoader();
 		for (Class<? extends DataLoader> dataLoaderType : beans) {
-			DataLoader beanDataLoader = CDI.lookup(dataLoaderType);
+			DataLoader loader = CDI.lookup(dataLoaderType);			
+			DataLoaderPrecedence loaderPrecedence = new DataLoaderPrecedence(loadData.precedence(), loader);
+			loaders.add(loaderPrecedence);
 			
-			DataLoaderPrecedence dataLoader = new DataLoaderPrecedence(loadData.precedence(), beanDataLoader);
-			loaders.add(dataLoader);
+			// permit recursive load nesting
+			extractLoadData(dataLoaderType, loaders);
+			extractLoadDatas(dataLoaderType, loaders);
 		}
 	}
 	

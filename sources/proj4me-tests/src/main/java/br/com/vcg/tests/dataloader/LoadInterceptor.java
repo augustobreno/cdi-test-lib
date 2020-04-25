@@ -21,7 +21,11 @@ public abstract class LoadInterceptor implements Serializable {
 	 */
 	@AroundInvoke
 	public Object aroundInvoke(InvocationContext invocation) throws Exception {
-		executor.process(invocation.getMethod());
+		try {
+			executor.process(invocation.getMethod());			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return invocation.proceed();
 	}
 
